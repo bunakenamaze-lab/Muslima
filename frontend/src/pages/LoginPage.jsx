@@ -74,9 +74,9 @@ export default function LoginPage() {
                 </div>
               )}
             </motion.div>
-            <h1 className="text-2xl font-bold text-white mb-1">SAFIRA</h1>
-            <p className="text-primary-200 text-sm">Smart Fatayat Untuk Informasi Risalah dan Administrasi</p>
-            <p className="text-primary-200 text-sm">PC Fatayat NU Kota Bandung</p>			
+            <h1 className="text-2xl font-bold text-white mb-1">MUSLIMA</h1>
+            <p className="text-primary-200 text-sm">Manajemen Surat dan Layanan Informasi Muslimat</p>
+            <p className="text-primary-200 text-sm">PC Muslimat NU Kota Bandung</p>			
           </div>
 
           {/* Form */}
@@ -140,7 +140,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-primary-200 text-xs mt-6">
-          SAFIRA © {new Date().getFullYear()} — Smart Fatayat Untuk Informasi Risalah dan Administrasi
+          MUSLIMAT © {new Date().getFullYear()} — Manajemen Surat dan Layanan Informasi Muslimat
         </p>
       </motion.div>
     </div>

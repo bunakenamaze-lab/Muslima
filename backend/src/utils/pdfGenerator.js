@@ -1222,7 +1222,7 @@ async function drawFooter(doc, surat, qrDataUrl, pageNum, totalPages) {
   const qrSz    = 55;
   const footerY = PH - 75;
   const verifikasiTxt =
-    'Dokumen ini ditandatangani dan distempel secara elektronik melalui Aplikasi Smart Fatayat Untuk Informasi Risalah dan Administrasi (SAFIRA) PC Fatayat NU Kota Bandung' +
+    'Dokumen ini ditandatangani dan distempel secara elektronik melalui Aplikasi Manajemen Surat dan Layanan Informasi Muslimat (MUSLIMA) PC Muslimat NU Kota Bandung' +
     ', untuk verifikasi surat scan atau klik QRCode.';
 
   // QR kiri bawah

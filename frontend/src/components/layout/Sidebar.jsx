@@ -61,9 +61,10 @@ export default function Sidebar({ isOpen, onClose }) {
         </div>
         <div className="min-w-0">
           <p className="font-bold text-primary-900 text-sm leading-tight truncate">
-            SAFIRA
+            MUSLIMA
           </p>
-          <p className="text-xs text-gray-400 truncate">Fatayat NU Kota Bandung</p>
+          <p className="text-xs text-gray-400 truncate">PC Muslimat NU</p>
+          <p className="text-xs text-gray-400 truncate">Kota Bandung</p>		  
         </div>
         {/* Close button mobile */}
         <button
