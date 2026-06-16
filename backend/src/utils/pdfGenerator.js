@@ -866,7 +866,7 @@ async function drawKopSurat(doc, organisasi, pageY) {
   const email     = organisasi.email        || '';
   const website   = organisasi.website      || '';
 
-  const logoMaxSize = 70;  // diperbesar hingga batas atas kop
+  const logoMaxSize = 75;  // diperbesar hingga batas atas kop
   const logoX       = ML + 2;
   const textX       = hasLogo ? ML + logoMaxSize + 10 : ML;
   const textW       = hasLogo ? CW - logoMaxSize - 10  : CW;
@@ -1148,7 +1148,7 @@ async function drawTandaTangan(doc, surat, startY, qrDataUrl) {
   const colW        = 210;
   const gapCol      = CW - colW * 2;
   const xKetua      = ML;
-  const xSekr       = ML + colW + gapCol + 13;
+  const xSekr       = ML + colW + gapCol + 15;
   const colWKetua   = colW + 25;
   const qrSz        = 35;
   const gapTtd      = FS_ISI * 4;
