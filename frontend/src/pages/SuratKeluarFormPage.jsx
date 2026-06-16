@@ -62,20 +62,23 @@ function parseHijriyah(str) {
 }
 
 // ── Default form ─────────────────────────────────────────────────────────────
-const defaultForm = {
-  jenisSurat: 'A',
-  perihal: '',
-  lampiran: '',
-  isiSurat: '',
-  lampiranIsi: '',
-  tujuanSurat: '',
-  tanggalMasehi: new Date().toISOString().split('T')[0],
-  tanggalHijriyah: '',
-  tempatTerbit: 'Bandung',
-  tataUsahaId: '',
-  kepalaId: '',
-  penerimaEksternal: '',
-  penerimaInternalIds: [],
+function makeDefaultForm() {
+  const hijri = todayHijriObj()
+  return {
+    jenisSurat: 'A',
+    perihal: '',
+    lampiran: '',
+    isiSurat: '',
+    lampiranIsi: '',
+    tujuanSurat: '',
+    tanggalMasehi: new Date().toISOString().split('T')[0],
+    tanggalHijriyah: hijri ? hijriObjToStr(hijri) : '',
+    tempatTerbit: 'Bandung',
+    tataUsahaId: '',
+    kepalaId: '',
+    penerimaEksternal: '',
+    penerimaInternalIds: [],
+  }
 }
 
 export default function SuratKeluarFormPage() {
@@ -84,7 +87,7 @@ export default function SuratKeluarFormPage() {
   const queryClient = useQueryClient()
   const isEdit = !!id
 
-  const [form, setForm] = useState(defaultForm)
+  const [form, setForm] = useState(() => makeDefaultForm())
   const [previewModal, setPreviewModal] = useState(false)
   const [templateModal, setTemplateModal] = useState(false)
   const [templateSearch, setTemplateSearch] = useState('')
@@ -122,6 +125,7 @@ export default function SuratKeluarFormPage() {
   useEffect(() => {
     if (existingSurat) {
       const parsed = parseHijriyah(existingSurat.tanggalHijriyah)
+      const defForm = makeDefaultForm()
       setForm({
         jenisSurat:          existingSurat.jenisSurat          || 'A',
         perihal:             existingSurat.perihal              || '',
@@ -129,8 +133,8 @@ export default function SuratKeluarFormPage() {
         isiSurat:            existingSurat.isiSurat             || '',
         lampiranIsi:         existingSurat.lampiranIsi          || '',
         tujuanSurat:         existingSurat.tujuanSurat          || '',
-        tanggalMasehi:       existingSurat.tanggalMasehi?.split('T')[0] || defaultForm.tanggalMasehi,
-        tanggalHijriyah:     existingSurat.tanggalHijriyah      || '',
+        tanggalMasehi:       existingSurat.tanggalMasehi?.split('T')[0] || defForm.tanggalMasehi,
+        tanggalHijriyah:     existingSurat.tanggalHijriyah      || defForm.tanggalHijriyah,
         tempatTerbit:        existingSurat.tempatTerbit         || 'Bandung',
         tataUsahaId:         existingSurat.tataUsahaId          || '',
         kepalaId:            existingSurat.kepalaId             || '',
@@ -144,10 +148,7 @@ export default function SuratKeluarFormPage() {
     }
   }, [existingSurat])
 
-  // Sync tanggalHijriyah ke form saat hijri state berubah (hanya jika belum manual)
-  useEffect(() => {
-    setForm(p => ({ ...p, tanggalHijriyah: hijriObjToStr(hijri) }))
-  }, [hijri])
+  // useEffect sync hijri→form dihapus — semua handler sudah set form.tanggalHijriyah langsung
 
   const saveMutation = useMutation({
     mutationFn: (data) => isEdit ? suratKeluarAPI.update(id, data) : suratKeluarAPI.create(data),
