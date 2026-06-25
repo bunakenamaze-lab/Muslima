@@ -79,8 +79,8 @@ export default function ProfilOrganisasiPage() {
   if (isLoading) return <PageLoader />
 
   const currentLogo = logoPreview || (profil?.logoPath ? getUploadUrl(profil.logoPath) : null)
-  // Preview nomor surat — format baru PC-FNU
-  const previewNomor = `001/A/PC-FNU/${['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'][new Date().getMonth()]}/${new Date().getFullYear()}`
+  // Preview nomor surat — format baru PC-MNU
+  const previewNomor = `001/A/PC-MNU/${['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'][new Date().getMonth()]}/${new Date().getFullYear()}`
 
   return (
     <div className="space-y-5 max-w-2xl">
@@ -172,7 +172,7 @@ export default function ProfilOrganisasiPage() {
             <p className="text-xs text-gray-500 mb-1">Preview format nomor surat:</p>
             <p className="font-mono text-sm font-semibold text-primary-700">{previewNomor}</p>
             <p className="text-xs text-gray-400 mt-1">
-              Urutan / Jenis / <strong>PC-FNU</strong> / Bulan-Romawi / Tahun
+              Urutan / Jenis / <strong>PC-MNU</strong> / Bulan-Romawi / Tahun
             </p>
           </div>
         </div>
