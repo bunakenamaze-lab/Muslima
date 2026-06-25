@@ -23,9 +23,9 @@ export default defineConfig({
       filename: 'sw-custom.js',
       includeAssets: ['favicon.svg', 'logo-org.png'],
       manifest: {
-        name: 'RISALATREN - Repositori Informasi Surat dan Administrasi Pondok Pesantren',
-        short_name: 'RISALATREN',
-        description: 'Repositori Informasi Surat dan Administrasi Pondok Pesantren',
+        name: 'MUSLIMA - Manajemen Surat dan Layanan Informasi Muslimat',
+        short_name: 'MUSLIMA',
+        description: 'Manajemen Surat dan Layanan Informasi Muslimat',
         theme_color: '#166534',
         background_color: '#166534',
         display: 'standalone',

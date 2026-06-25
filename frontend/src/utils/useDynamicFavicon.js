@@ -17,8 +17,8 @@ export function useDynamicFavicon() {
     if (!orgData) return
 
     // Update title
-    const namaOrg = orgData.namaOrg || 'RISALATREN'
-    document.title = `${namaOrg} - Repositori Informasi Surat dan Administrasi Pondok Pesantren`
+    const namaOrg = orgData.namaOrg || 'MUSLIMA'
+    document.title = `${namaOrg} - Manajemen Surat dan Layanan Informasi Muslimat`
 
     // Update favicon jika ada logo
     if (orgData.logoPath) {

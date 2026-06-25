@@ -11,7 +11,7 @@ self.addEventListener('push', (event) => {
   try {
     data = event.data.json()
   } catch {
-    data = { title: 'RISALATREN', body: event.data.text() }
+    data = { title: 'MUSLIMA', body: event.data.text() }
   }
 
   const options = {
@@ -24,7 +24,7 @@ self.addEventListener('push', (event) => {
   }
 
   event.waitUntil(
-    self.registration.showNotification(data.title || 'RISALATREN', options)
+    self.registration.showNotification(data.title || 'MUSLIMA', options)
   )
 })
 

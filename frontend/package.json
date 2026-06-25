@@ -1,7 +1,7 @@
 {
-  "name": "risalatren-frontend",
+  "name": "muslima-frontend",
   "version": "1.0.0",
-  "description": "RISALATREN Frontend - Repositori Informasi Surat dan Administrasi Pondok Pesantren",
+  "description": "MUSLIMA Frontend - Manajemen Surat dan Layanan Informasi Muslimat",
   "type": "module",
   "scripts": {
     "dev": "vite",
